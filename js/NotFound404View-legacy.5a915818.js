@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkdemo"]=self["webpackChunkdemo"]||[]).push([[60],{1612:function(n,e,t){t.r(e),t.d(e,{default:function(){return s}});var a=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[t("h1",[n._v("Opsss...")]),t("p",[n._v("Página não encontrada.")]),t("p",[t("router-link",{attrs:{to:"/"}},[n._v("Voltar para a página inicial")])],1)])},r=[],u={name:"NotFound404View"},l=u,i=t(1001),o=(0,i.Z)(l,a,r,!1,null,null,null),s=o.exports}}]);
+//# sourceMappingURL=NotFound404View-legacy.5a915818.js.map
