@@ -1,10 +1,10 @@
 <template>
   <div>
     <div>
-      <p>Exemplo usando sync.</p>
+      <p>Exemplo usando v-model.</p>
       <p>
-        Para exemplo usando <code>v-model</code>, clique no link:
-        <router-link to="homevmodel">HomeVModelView</router-link>
+        Para exemplo usando <code>sync</code>, clique no link:
+        <router-link to="/">HomeView</router-link>
       </p>
     </div>
 
@@ -25,12 +25,14 @@
               Excluir usuário
             </button>
           </div>
-          <!-- https://br.vuejs.org/v2/guide/components-custom-events.html#Modificador-sync -->
-          <UserInput
-            :name.sync="user.name"
-            :document.sync="user.document"
-            :age.sync="user.age"
-          />
+          <!--
+              https://br.vuejs.org/v2/guide/components-custom-events.html#Personalizando-v-model-do-Componente
+              https://www.webmound.com/add-v-model-custom-components-vue-2/
+              https://www.drewtown.dev/post/using-vues-v-model-with-objects/
+              usa `users[idx]` ao inves de `user` pois:
+              'v-model' directives cannot update the iteration variable 'user' itself.
+          -->
+          <UserInputVModel v-model="users[idx]" />
         </div>
         <button @click="addOtherUser">Adicionar outro usuário</button>
       </div>
@@ -39,13 +41,13 @@
 </template>
 
 <script>
-import UserInput from "@/modules/home/components/UserInput.vue";
+import UserInputVModel from "@/modules/home/components/UserInputVModel.vue";
 
 export default {
-  name: "HomeView",
+  name: "HomeVModelView",
 
   components: {
-    UserInput,
+    UserInputVModel,
   },
 
   data: () => ({

@@ -10,6 +10,28 @@ const routes = [
     name: "home",
     component: HomeView,
   },
+  {
+    path: "/homevmodel",
+    name: "homeVModel",
+    component: () =>
+      import(
+        /* webpackChunkName: "HomeVModelView" */ "@/views/HomeVModelView.vue"
+      ),
+  },
+  // Catch all / 404 Not found Route
+  {
+    path: "*",
+    name: "NotFound404",
+    component: () =>
+      import(
+        /* webpackChunkName: "NotFound404View" */ "@/views/NotFound404View.vue"
+      ),
+  },
+  // Catch all / 404 Not found Route - Redireciona para `/`
+  // {
+  //   path: "*",
+  //   redirect: "/"
+  // },
   // {
   //   path: "/about",
   //   name: "about",
