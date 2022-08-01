@@ -12,6 +12,9 @@ npm run build
 # navigate into the build output directory
 cd dist
 
+# spa no GitHub Pages: 404 == index.html
+cp index.html 404.html
+
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
